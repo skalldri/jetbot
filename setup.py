@@ -4,8 +4,15 @@ from setuptools import setup, find_packages, Extension
 
 
 def build_libs():
-    subprocess.call(['cmake', '.'])
-    subprocess.call(['make'])
+    retcode = subprocess.call(['cmake', '.'])
+
+    if retcode != 0:
+        exit(retcode)
+
+    retcode = subprocess.call(['make'])
+
+    if retcode != 0:
+        exit(retcode)
     
 
 build_libs()
