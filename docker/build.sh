@@ -1,3 +1,4 @@
+source ./configure.sh
 cd base && ./build.sh && cd ..
 cd models && ./build.sh && cd ..
 cd display && ./build.sh && cd ..

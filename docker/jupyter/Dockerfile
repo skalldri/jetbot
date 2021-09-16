@@ -17,4 +17,6 @@ RUN python3 -c "from notebook.auth.security import set_password; set_password('$
 
 ENV SHELL /bin/bash
 
+# Needed for OpenCV
+ENV LD_PRELOAD /usr/lib/aarch64-linux-gnu/libgomp.so.1
 CMD cd $JUPYTER_WORKDIR && jupyter lab --ip 0.0.0.0 --port 8888 --allow-root
